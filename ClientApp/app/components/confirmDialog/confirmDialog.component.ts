@@ -10,14 +10,14 @@ import { trigger, state, style, transition, animate, group } from '@angular/anim
     templateUrl: './confirmDialog.component.html',
     styleUrls:['./confirmDialog.component.css'], animations: [
         trigger('confirmDialogChanged', [
-            state('active', style({height: '*'})),
+            state('active', style({opacity: '*'})),
             transition('void => *', [
-              style({height: 0 }),
-              animate(250, style({height: '*'}))
+              style({opacity: 0 }),
+              animate(250, style({opacity: '*'}))
             ]),
             transition('* => void', [
-              style({height: '*'}),
-              animate(250, style({height: 0}))
+              style({opacity: '*'}),
+              animate(250, style({opacity: 0}))
             ]),
            
         ]),

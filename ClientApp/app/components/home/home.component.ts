@@ -4,13 +4,13 @@ import { ConfirmService } from '../../services/confirm.service';
     selector: 'home',
     templateUrl: './home.component.html'
 })
-export class HomeComponent{
+export class HomeComponent {
     what = "Hello";
     constructor(private _confirm: ConfirmService) { }
     public showDialog() {
-        this._confirm.showConfirm(()=> this.writeMessage("Goodbye"),"Test", "Some thing changed");
+        this._confirm.showConfirm(() => this.writeMessage("Goodbye"), "Test", "Some thing changed");
     }
-    public writeMessage = (msg: string) =>{ this.what = msg;};
-
+    public writeMessage = (msg: string) => { this.what = msg; };
+    public showDialog2 = () => this._confirm.showConfirm(() => alert("Fuck"), "Test", "Some thing changed");
 }
 

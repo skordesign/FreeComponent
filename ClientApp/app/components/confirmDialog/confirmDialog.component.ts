@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ConfirmService } from '../../services/confirm.service';
 import { Subscription } from 'rxjs/Subscription';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { trigger, state, style, transition, animate, group } from '@angular/animations';
 
 
 
@@ -9,15 +9,29 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     selector: 'app-confirmDialog',
     templateUrl: './confirmDialog.component.html',
     styleUrls:['./confirmDialog.component.css'], animations: [
-        trigger('playBox', [
-            state('inactive', style({ transform: 'translateX(0)' })),
+        trigger('confirmDialogChanged', [
+            state('active', style({height: '*'})),
             transition('void => *', [
-                style({ transform: 'translateX(-100%)' }),
-                animate(200)
+              style({height: 0 }),
+              animate(250, style({height: '*'}))
             ]),
             transition('* => void', [
-                animate(200, style({ transform: 'translateX(100%)' }))
-            ])
+              style({height: '*'}),
+              animate(250, style({height: 0}))
+            ]),
+           
+        ]),
+        trigger('confirmDialogChangedOverlay', [
+            state('active', style({opacity: '*'})),
+            transition('void => *', [
+              style({opacity:0 }),
+              animate(250, style({opacity: '*'}))
+            ]),
+            transition('* => void', [
+              style({opacity: '*'}),
+              animate(250, style({opacity: 0}))
+            ]),
+           
         ])
     ]
 })

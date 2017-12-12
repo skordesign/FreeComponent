@@ -1,4 +1,4 @@
-<div [@playBox]="state" class=" modal " *ngIf="isActivated" tabindex="-1" role="dialog">
+<div [@confirmDialogChanged]="state" class=" modal " *ngIf="isActivated" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -14,6 +14,6 @@
         </div>
     </div>
 </div>
-<div *ngIf="isActivated" class="overlay">
+<div [@confirmDialogChangedOverlay]="state" *ngIf="isActivated" class="overlay">
 
 </div>

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -8,7 +8,6 @@ import { AppComponent } from './components/app/app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ConfirmDialogComponent } from './components/confirmDialog/confirmDialog.component';
 import { ConfirmService } from './services/confirm.service';
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -25,7 +24,8 @@ import { ConfirmService } from './services/confirm.service';
             { path: '**', redirectTo: 'home' }
         ])
     ],
-    providers:[ConfirmService]
+    providers:[ConfirmService],
+    schemas:[NO_ERRORS_SCHEMA]
 })
 export class AppModuleShared {
 }

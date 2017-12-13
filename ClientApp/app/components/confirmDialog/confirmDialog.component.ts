@@ -2,36 +2,37 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ConfirmService } from '../../services/confirm.service';
 import { Subscription } from 'rxjs/Subscription';
 import { trigger, state, style, transition, animate, group } from '@angular/animations';
+import { fakeAsync } from '@angular/core/testing';
 
 
 
 @Component({
     selector: 'app-confirmDialog',
     templateUrl: './confirmDialog.component.html',
-    styleUrls:['./confirmDialog.component.css'], animations: [
+    styleUrls: ['./confirmDialog.component.css'], animations: [
         trigger('confirmDialogChanged', [
-            state('active', style({opacity: '*'})),
+            state('active', style({ opacity: '*' })),
             transition('void => *', [
-              style({opacity: 0 }),
-              animate(250, style({opacity: '*'}))
+                style({ opacity: 0 }),
+                animate(250, style({ opacity: '*' }))
             ]),
             transition('* => void', [
-              style({opacity: '*'}),
-              animate(250, style({opacity: 0}))
+                style({ opacity: '*' }),
+                animate(250, style({ opacity: 0 }))
             ]),
-           
+
         ]),
         trigger('confirmDialogChangedOverlay', [
-            state('active', style({opacity: '*'})),
+            state('active', style({ opacity: '*' })),
             transition('void => *', [
-              style({opacity:0 }),
-              animate(250, style({opacity: '*'}))
+                style({ opacity: 0 }),
+                animate(250, style({ opacity: '*' }))
             ]),
             transition('* => void', [
-              style({opacity: '*'}),
-              animate(250, style({opacity: 0}))
+                style({ opacity: '*' }),
+                animate(250, style({ opacity: 0 }))
             ]),
-           
+
         ])
     ]
 })
@@ -40,7 +41,7 @@ export class ConfirmDialogComponent implements OnInit, OnDestroy {
         this.subcription.unsubscribe();
     }
     isActivated = false;
-    action: any;
+    actions: Action[]
     subcription: Subscription;
     title = "";
     message = "";
@@ -50,7 +51,7 @@ export class ConfirmDialogComponent implements OnInit, OnDestroy {
     ngOnInit() {
 
         this.subcription = this.confirm.confirmChanged.subscribe((body: any) => {
-            this.action = body.action;
+            this.actions = body.actions;
             this.title = body.title;
             this.message = body.message;
             this.showDialog();
@@ -62,12 +63,14 @@ export class ConfirmDialogComponent implements OnInit, OnDestroy {
     showDialog() {
         this.isActivated = true;
     }
-    close() {
-        this.action = null;
+    exec(action: any) {
+        let act = action as Action;
+        act.func();
         this.isActivated = false;
     }
-    ok() {
-        this.action()
-        this.close()
-    }
+}
+
+interface Action {
+    func: () => void;
+    text: string;
 }

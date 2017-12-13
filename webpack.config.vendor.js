@@ -16,12 +16,14 @@ const treeShakableModules = [
 ];
 const nonTreeShakableModules = [
     'bootstrap',
-    'bootstrap/dist/css/bootstrap.css',
+    'bootstrap/dist/css/bootstrap.min.css',
     'es6-promise',
     'es6-shim',
     'event-source-polyfill',
     'jquery',
-    'popper.js'
+    'popper.js',
+    'primeng/resources/primeng.min.css',
+    'primeng/resources/themes/omega/theme.css'
 ];
 const allModules = treeShakableModules.concat(nonTreeShakableModules);
 
@@ -33,7 +35,7 @@ module.exports = (env) => {
         resolve: { extensions: [ '.js' ] },
         module: {
             rules: [
-                { test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/, use: 'url-loader?limit=100000' }
+                { test: /\.(png|woff|woff2|eot|ttf|svg|gif)(\?|$)/, use: 'url-loader?limit=100000' }
             ]
         },
         output: {

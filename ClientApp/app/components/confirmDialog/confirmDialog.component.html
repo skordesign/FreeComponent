@@ -8,8 +8,7 @@
                 <p>{{ message }}</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" (click)="ok()">Save changes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+                <button *ngFor="let action of actions" type="button" class="btn btn-primary" (click)="exec(action)">{{ action.text }}</button>
             </div>
         </div>
     </div>

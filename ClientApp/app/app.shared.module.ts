@@ -13,12 +13,14 @@ import { ProgressComponent } from './components/progressBar/progressBar.componen
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { DropdownItemComponent } from './components/dropdown/dropdownItem/dropdownItem.component';
 import { ClickOutsideDirective } from './directives/clickOutside.directive';
+import { TabbedComponent } from './components/tabbed/tabbed.component';
+import { TabComponent } from './components/tabbed/tab/tab.component';
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
         ConfirmDialogComponent, ProgressComponent, DropdownComponent, DropdownItemComponent,
-        ClickOutsideDirective
+        ClickOutsideDirective, TabbedComponent, TabComponent    
     ],
     imports: [
         CommonModule,

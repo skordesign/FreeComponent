@@ -24,5 +24,16 @@ export class HomeComponent {
     public writeMessage = (msg: string) => { this.what = msg; };
     p = 0;
     public setProgress = () => this.progressSvc.setPercent(this.p = this.p + 10);
+
+
+    items: any[] = [
+        {
+            text: "Hello",
+            value: 1
+        }, {
+            text: "Goodbye",
+            value: 2
+        }
+    ]
 }
 

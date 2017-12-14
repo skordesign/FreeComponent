@@ -10,11 +10,15 @@ import { ConfirmDialogComponent } from './components/confirmDialog/confirmDialog
 import { ConfirmService } from './services/confirm.service';
 import { ProgressService } from './services/progress.service';
 import { ProgressComponent } from './components/progressBar/progressBar.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { DropdownItemComponent } from './components/dropdown/dropdownItem/dropdownItem.component';
+import { ClickOutsideDirective } from './directives/clickOutside.directive';
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
-        ConfirmDialogComponent, ProgressComponent
+        ConfirmDialogComponent, ProgressComponent, DropdownComponent, DropdownItemComponent,
+        ClickOutsideDirective
     ],
     imports: [
         CommonModule,

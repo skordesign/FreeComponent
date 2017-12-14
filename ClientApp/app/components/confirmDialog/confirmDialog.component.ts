@@ -35,10 +35,11 @@ import { trigger, state, style, transition, animate, group } from '@angular/anim
 })
 export class ConfirmDialogComponent implements OnInit, OnDestroy {
     ngOnDestroy(): void {
+        this.actions.length = 0;
         this.subcription.unsubscribe();
     }
     isActivated = false;
-    actions: Action[]
+    actions: Action[];
     subcription: Subscription;
     title = "";
     message = "";
@@ -46,6 +47,7 @@ export class ConfirmDialogComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
 
+        this.actions = [];
         this.subcription = this.confirm.confirmChanged.subscribe((body: any) => {
             this.actions = body.actions;
             this.title = body.title;

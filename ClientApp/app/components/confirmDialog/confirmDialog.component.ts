@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ConfirmService } from '../../services/confirm.service';
 import { Subscription } from 'rxjs/Subscription';
 import { trigger, state, style, transition, animate, group } from '@angular/animations';
-import { fakeAsync } from '@angular/core/testing';
 
 
 
@@ -11,7 +10,6 @@ import { fakeAsync } from '@angular/core/testing';
     templateUrl: './confirmDialog.component.html',
     styleUrls: ['./confirmDialog.component.css'], animations: [
         trigger('confirmDialogChanged', [
-            state('active', style({ opacity: '*' })),
             transition('void => *', [
                 style({ opacity: 0 }),
                 animate(250, style({ opacity: '*' }))
@@ -23,7 +21,6 @@ import { fakeAsync } from '@angular/core/testing';
 
         ]),
         trigger('confirmDialogChangedOverlay', [
-            state('active', style({ opacity: '*' })),
             transition('void => *', [
                 style({ opacity: 0 }),
                 animate(250, style({ opacity: '*' }))
@@ -45,7 +42,6 @@ export class ConfirmDialogComponent implements OnInit, OnDestroy {
     subcription: Subscription;
     title = "";
     message = "";
-    state = "inactive";
     constructor(private confirm: ConfirmService) { }
 
     ngOnInit() {
@@ -56,9 +52,6 @@ export class ConfirmDialogComponent implements OnInit, OnDestroy {
             this.message = body.message;
             this.showDialog();
         });
-        if (this.state == "inactive") {
-            setTimeout(() => this.state = "active")
-        }
     }
     showDialog() {
         this.isActivated = true;

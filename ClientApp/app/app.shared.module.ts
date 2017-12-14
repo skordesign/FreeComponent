@@ -8,11 +8,13 @@ import { AppComponent } from './components/app/app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ConfirmDialogComponent } from './components/confirmDialog/confirmDialog.component';
 import { ConfirmService } from './services/confirm.service';
+import { ProgressService } from './services/progress.service';
+import { ProgressComponent } from './components/progressBar/progressBar.component';
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
-        ConfirmDialogComponent
+        ConfirmDialogComponent, ProgressComponent
     ],
     imports: [
         CommonModule,
@@ -24,7 +26,7 @@ import { ConfirmService } from './services/confirm.service';
             { path: '**', redirectTo: 'home' }
         ])
     ],
-    providers:[ConfirmService],
+    providers:[ConfirmService, ProgressService],
     schemas:[NO_ERRORS_SCHEMA]
 })
 export class AppModuleShared {

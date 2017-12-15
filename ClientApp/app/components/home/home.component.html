@@ -1,4 +1,5 @@
 <h1>{{ what }}</h1>
+
 <div class="container jumbotron">
   <app-tabbed >
     <app-tab title="Hello">
@@ -40,8 +41,8 @@
 <button class="btn btn-primary" (click)="showDialog()">Show confirm Dialog</button>
 <button class="btn btn-danger" (click)="setProgress()">Progress </button>
 <button class="btn btn-warning" (click)="showLoading()">Loading </button>
-<app-dropdown placeholder="Select some shit" (selectionChanged)="selectNewItem($event)">
-  <app-dropdownItem *ngFor="let item of items" [value]="item" [text]="item.text" [isSelected]="item.text=='Goodbye'">
+<app-dropdown placeholder="Select some shit" >
+  <app-dropdownItem *ngFor="let item of items" [value]="item" [text]="item.text" [isSelected]="item.text=='Goodbye'" (click)="navigate(item)">
     {{ item.text }}
   </app-dropdownItem>
 </app-dropdown>

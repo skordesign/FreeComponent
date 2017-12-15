@@ -44,5 +44,13 @@ export class HomeComponent {
         this.loadingSvc.showLoading(true);
         setTimeout(() => this.loadingSvc.showLoading(false), 5000);
     }
+    navigate(item: any) {
+        console.log(item)
+        if(item.text=="Hello"){
+            console.log(item.text)
+        }else{
+            alert(item.text);
+        }
+    }
 }
 

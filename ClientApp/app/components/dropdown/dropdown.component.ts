@@ -7,6 +7,7 @@ import { Subscription } from 'rxjs/Subscription';
     templateUrl: './dropdown.component.html'
 })
 export class DropdownComponent implements OnInit {
+    // selectionChanged return DropdownItemComponent => this.value to get value
     @Output() selectionChanged = new EventEmitter<any>();
     @Input() placeholder = "Hello"
     // isActivated = true => dropdown show items

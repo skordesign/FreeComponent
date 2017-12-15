@@ -23,5 +23,9 @@ export class TabComponent implements OnInit {
         this.tabbed.addTab(this);
     }
 
-    ngOnInit() { }
+    ngOnInit() { 
+        if(this.isActivated){
+            this.tabbed.selectTab(this);
+        }
+    }
 }

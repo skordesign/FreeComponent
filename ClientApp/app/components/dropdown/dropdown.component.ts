@@ -16,14 +16,16 @@ export class DropdownComponent implements OnInit {
     constructor() { }
     addItem(item: DropdownItemComponent) {
         this.items.push(item);
-        
     }
     selectItemEmit(item: DropdownItemComponent) {
-        this.items.forEach(i=>i.isSelected=false);
+        this.selectItem(item);
+        this.selectionChanged.emit(item);
+    }
+    selectItem(item: DropdownItemComponent) {
+        this.items.forEach(i => i.isSelected = false);
         item.isSelected = true;
         this.placeholder = item.text;
         this.selectedItem = item;
-        this.selectionChanged.emit(item);
     }
     ngOnInit() { }
 }

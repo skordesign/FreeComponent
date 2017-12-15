@@ -22,7 +22,7 @@ export class DropdownItemComponent implements OnInit, AfterViewInit {
     }
     ngOnInit() {
         if (this.isSelected) {
-            this.dropdown.selectItemEmit(this);
+            this.dropdown.selectItem(this);
         }
     }
 }

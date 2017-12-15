@@ -36,5 +36,8 @@ export class HomeComponent {
             value: 2
         }
     ]
+    selectNewItem(item:any){
+        console.log(item);
+    }
 }
 

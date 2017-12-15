@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, Output } from '@angular/core';
 import { DropdownComponent } from '../dropdown.component';
+import { EventEmitter } from '@angular/core/src/event_emitter';
 
 @Component({
     selector: 'app-dropdownItem',
@@ -8,14 +9,20 @@ import { DropdownComponent } from '../dropdown.component';
 export class DropdownItemComponent implements OnInit, AfterViewInit {
     ngAfterViewInit(): void {
     }
+    // value is object;
     @Input() value: any;
-    @Input() content: string;
+    // content is option text in dropdown
+    @Input() text: string;
+    @Input() isSelected: boolean;
     constructor(private dropdown: DropdownComponent) {
         this.dropdown.addItem(this);
     }
-    selectItem() {
-        this.dropdown.selectItemEmit(this.value, this.content);
+    selectItem(item: DropdownItemComponent) {
+        this.dropdown.selectItemEmit(item);
     }
     ngOnInit() {
+        if (this.isSelected) {
+            this.dropdown.selectItemEmit(this);
+        }
     }
 }

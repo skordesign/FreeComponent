@@ -1,3 +1,5 @@
+$color : #666666;
+
 .modal{
     display:block !important;
     z-index: 9999999;
@@ -10,7 +12,7 @@
     display: block;
 }
 .overlay{
-    background: #00000040;
+    background-color: rgba($color, 0.4);
     height: 100%;
     width: 100%;
     top: 0;

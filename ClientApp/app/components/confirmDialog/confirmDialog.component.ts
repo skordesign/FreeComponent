@@ -8,7 +8,7 @@ import { trigger, state, style, transition, animate, group } from '@angular/anim
 @Component({
     selector: 'app-confirmDialog',
     templateUrl: './confirmDialog.component.html',
-    styleUrls: ['./confirmDialog.component.css'], animations: [
+    styleUrls: ['./confirmDialog.component.scss'], animations: [
         trigger('confirmDialogChanged', [
             transition('void => *', [
                 style({ opacity: 0 }),

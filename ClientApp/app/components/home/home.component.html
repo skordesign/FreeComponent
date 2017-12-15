@@ -39,8 +39,8 @@
 </div>
 <button class="btn btn-primary" (click)="showDialog()">Show confirm Dialog</button>
 <button class="btn btn-danger" (click)="setProgress()">Progress </button>
-<app-dropdown placeholder="Select some shit">
-  <app-dropdownItem *ngFor="let item of items" [value]="item" [content]="item.text">
+<app-dropdown placeholder="Select some shit" >
+  <app-dropdownItem *ngFor="let item of items" [value]="item" [text]="item.text" [isSelected]="item.text=='Goodbye'">
     {{ item.text }}
   </app-dropdownItem>
 </app-dropdown>

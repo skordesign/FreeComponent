@@ -17,12 +17,15 @@ import { TabbedComponent } from './components/tabbed/tabbed.component';
 import { TabComponent } from './components/tabbed/tab/tab.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { LoadingService } from './services/loading.service';
+import { AutoCompleteInputComponent } from './components/autoCompleteInput/autoCpltInput.component';
+import { RatingBarComponent } from './components/ratingBar/ratingBar.component';
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
         ConfirmDialogComponent, ProgressComponent, DropdownComponent, DropdownItemComponent,
-        ClickOutsideDirective, TabbedComponent, TabComponent, LoadingComponent
+        ClickOutsideDirective, TabbedComponent, TabComponent, LoadingComponent, AutoCompleteInputComponent,
+        RatingBarComponent
     ],
     imports: [
         CommonModule,

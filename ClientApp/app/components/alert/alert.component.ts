@@ -27,7 +27,6 @@ export class AlertComponent implements OnInit, OnDestroy {
     private showAlert(alert: Alert) {
     }
 }
-
 declare global {
     interface Array<T> {
         deQueue(): void;

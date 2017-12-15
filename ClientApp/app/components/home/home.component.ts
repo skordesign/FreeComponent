@@ -6,7 +6,19 @@ import { DropdownItemComponent } from '../dropdown/dropdownItem/dropdownItem.com
 import { LoadingService } from '../../services/loading.service';
 @Component({
     selector: 'home',
-    templateUrl: './home.component.html'
+    templateUrl: './home.component.html',
+    styles:[`
+    .btn{
+        box-shadow: 0 1px 2px rgba(0,0,0,0.16), 0 1px 6px rgba(0,0,0,0.23);
+        border-radius: 30px;
+        padding: 8px  16px;
+        font-family: Montserrat
+    }
+    @font-face {
+        font-family: Montserrat;
+        src: url(fonts/Montserrat-Regular.ttf);
+    }
+    `]
 })
 export class HomeComponent {
     what = "Hello";

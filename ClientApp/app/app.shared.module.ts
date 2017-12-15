@@ -15,12 +15,14 @@ import { DropdownItemComponent } from './components/dropdown/dropdownItem/dropdo
 import { ClickOutsideDirective } from './directives/clickOutside.directive';
 import { TabbedComponent } from './components/tabbed/tabbed.component';
 import { TabComponent } from './components/tabbed/tab/tab.component';
+import { LoadingComponent } from './components/loading/loading.component';
+import { LoadingService } from './services/loading.service';
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
         ConfirmDialogComponent, ProgressComponent, DropdownComponent, DropdownItemComponent,
-        ClickOutsideDirective, TabbedComponent, TabComponent    
+        ClickOutsideDirective, TabbedComponent, TabComponent, LoadingComponent
     ],
     imports: [
         CommonModule,
@@ -32,7 +34,7 @@ import { TabComponent } from './components/tabbed/tab/tab.component';
             { path: '**', redirectTo: 'home' }
         ])
     ],
-    providers:[ConfirmService, ProgressService],
+    providers:[ConfirmService, ProgressService, LoadingService],
     schemas:[NO_ERRORS_SCHEMA]
 })
 export class AppModuleShared {

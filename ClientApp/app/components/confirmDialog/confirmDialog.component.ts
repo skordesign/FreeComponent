@@ -19,17 +19,6 @@ import { trigger, state, style, transition, animate, group } from '@angular/anim
                 animate(250, style({ opacity: 0 }))
             ]),
 
-        ]),
-        trigger('confirmDialogChangedOverlay', [
-            transition('void => *', [
-                style({ opacity: 0 }),
-                animate(250, style({ opacity: '*' }))
-            ]),
-            transition('* => void', [
-                style({ opacity: '*' }),
-                animate(250, style({ opacity: 0 }))
-            ]),
-
         ])
     ]
 })

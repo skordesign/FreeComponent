@@ -3,14 +3,19 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const AotPlugin = require('@ngtools/webpack').AotPlugin;
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
-
+const TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlugin;
 module.exports = (env) => {
     // Configuration in common to both client-side and server-side bundles
     const isDevBuild = !(env && env.prod);
     const sharedConfig = {
         stats: { modules: false },
         context: __dirname,
-        resolve: { extensions: ['.js', '.ts'] },
+        resolve: {
+            extensions: ['.js', '.ts'], plugins: [
+                new TsConfigPathsPlugin()
+            ],
+        },
+
         output: {
             filename: '[name].js',
             publicPath: 'dist/' // Webpack dev middleware, if enabled, handles requests for this URL prefix

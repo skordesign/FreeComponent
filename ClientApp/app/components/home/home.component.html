@@ -1,5 +1,19 @@
 <h1>{{ what }}</h1>
 <div class="container jumbotron">
+
+</div>
+<button class="btn btn-primary" (click)="showDialog()">Show confirm Dialog</button>
+<button class="btn btn-danger" (click)="setProgress()">Progress </button>
+<button class="btn btn-warning" (click)="showLoading()">Loading </button>
+<app-dropdown placeholder="Select some shit">
+  <app-dropdownItem *ngFor="let item of items" [value]="item" [text]="item.text" [isSelected]="item.text=='Hello'">
+    {{ item.text }}
+  </app-dropdownItem>
+</app-dropdown>
+<auto-complete-input></auto-complete-input>
+<a href="tel:01239291095">Call me</a>
+<app-rating-bar></app-rating-bar>
+<app-expansible-card>
   <app-tabbed >
     <app-tab title="Hello">
       <div class="card-body">
@@ -36,18 +50,6 @@
       </div>
     </app-tab>
   </app-tabbed>
-</div>
-<button class="btn btn-primary" (click)="showDialog()">Show confirm Dialog</button>
-<button class="btn btn-danger" (click)="setProgress()">Progress </button>
-<button class="btn btn-warning" (click)="showLoading()">Loading </button>
-<app-dropdown placeholder="Select some shit">
-  <app-dropdownItem *ngFor="let item of items" [value]="item" [text]="item.text" [isSelected]="item.text=='Hello'">
-    {{ item.text }}
-  </app-dropdownItem>
-</app-dropdown>
-<auto-complete-input></auto-complete-input>
-<a href="tel:01239291095">Call me</a>
-<app-rating-bar></app-rating-bar>
-<app-expansible-card>
-  <p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in. Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut eiusmod cupidatat elit dolore.</p>
 </app-expansible-card>
+
+<app-popover></app-popover>

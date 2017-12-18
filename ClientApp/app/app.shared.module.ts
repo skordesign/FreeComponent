@@ -20,6 +20,7 @@ import { LoadingService } from './services/loading.service';
 import { RatingBarComponent } from '@app/components/ratingBar/ratingBar.component';
 import { AutoCompleteInputComponent } from '@app/components/autoCompleteInput/autoCpltInput.component';
 import { ExpansibleCardComponent } from '@app/components/expansible-card/expansible-card.component';
+import { PopoverComponent } from '@app/components/popover/popover.component';
 
 @NgModule({
     declarations: [
@@ -27,6 +28,7 @@ import { ExpansibleCardComponent } from '@app/components/expansible-card/expansi
         HomeComponent,
         ConfirmDialogComponent, ProgressComponent, DropdownComponent, DropdownItemComponent, ExpansibleCardComponent,
         ClickOutsideDirective, TabbedComponent, TabComponent, LoadingComponent, AutoCompleteInputComponent,
+        PopoverComponent,
         RatingBarComponent
     ],
     imports: [

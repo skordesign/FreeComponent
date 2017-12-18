@@ -14,10 +14,10 @@ import { trigger, state, style, transition, animate, group } from '@angular/anim
             })),
             transition('1 => 0', [
                 style({ height: '*' }),
-                animate(250, style({ height: 200 }))
+                animate(100, style({ height: 200 }))
             ]), transition('0 => 1', [
                 style({ height: 200 }),
-                animate(250, style({ height: '*' }))
+                animate(100, style({ height: '*' }))
             ]),
         ])
     ]

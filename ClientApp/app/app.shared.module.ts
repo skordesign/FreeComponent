@@ -21,6 +21,7 @@ import { RatingBarComponent } from '@app/components/ratingBar/ratingBar.componen
 import { AutoCompleteInputComponent } from '@app/components/autoCompleteInput/autoCpltInput.component';
 import { ExpansibleCardComponent } from '@app/components/expansible-card/expansible-card.component';
 import { PopoverComponent } from '@app/components/popover/popover.component';
+import { CheckboxComponent } from '@app/components/checkbox/checkbox.component';
 
 @NgModule({
     declarations: [
@@ -28,7 +29,7 @@ import { PopoverComponent } from '@app/components/popover/popover.component';
         HomeComponent,
         ConfirmDialogComponent, ProgressComponent, DropdownComponent, DropdownItemComponent, ExpansibleCardComponent,
         ClickOutsideDirective, TabbedComponent, TabComponent, LoadingComponent, AutoCompleteInputComponent,
-        PopoverComponent,
+        PopoverComponent, CheckboxComponent,
         RatingBarComponent
     ],
     imports: [

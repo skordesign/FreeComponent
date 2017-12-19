@@ -1,7 +1,4 @@
 <h1>{{ what }}</h1>
-<div class="container jumbotron">
-
-</div>
 <button class="btn btn-primary" (click)="showDialog()">Show confirm Dialog</button>
 <button class="btn btn-danger" (click)="setProgress()">Progress </button>
 <button class="btn btn-warning" (click)="showLoading()">Loading </button>
@@ -10,11 +7,9 @@
     {{ item.text }}
   </app-dropdownItem>
 </app-dropdown>
-<auto-complete-input></auto-complete-input>
-<a href="tel:01239291095">Call me</a>
 <app-rating-bar></app-rating-bar>
 <app-expansible-card>
-  <app-tabbed >
+  <app-tabbed>
     <app-tab title="Hello">
       <div class="card-body">
         <h4 class="card-title">Card title</h4>
@@ -51,5 +46,21 @@
     </app-tab>
   </app-tabbed>
 </app-expansible-card>
-
-<app-popover></app-popover>
+<app-checkbox [isCheck]="1==1" text="what"></app-checkbox>
+<app-popover class="fixed-top" style="right:200px;left:auto;">
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-check">
+        <app-checkbox style="font-size:2em" isCheck='false' text="Check me"></app-checkbox>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</app-popover>

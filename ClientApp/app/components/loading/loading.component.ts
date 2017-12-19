@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { trigger, state, style, transition, animate, group } from '@angular/animations';
 import { Subscription } from 'rxjs/Subscription';
@@ -22,7 +22,7 @@ import { LoadingService } from '../../services/loading.service';
     ]
 })
 export class LoadingComponent implements OnInit {
-    isActivated: boolean = false;
+    @Input() isActivated: boolean = false;
     constructor(private loadingSvc: LoadingService) { }
     subcription: Subscription;
     ngOnInit() {

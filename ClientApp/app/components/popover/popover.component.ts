@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 import { trigger, state, style, transition, animate, group } from '@angular/animations';
 @Component({
     selector: 'app-popover',
@@ -27,17 +27,30 @@ import { trigger, state, style, transition, animate, group } from '@angular/anim
 export class PopoverComponent implements OnInit {
     @Input() header = "menu"
     state = false;
-    top = 0;
-    left = 0;
-
-    constructor(private element: ElementRef) { }
+    top = -1000;
+    left = -1000;
+    enabled = false;
+    @ViewChild('btn') btn: ElementRef;
+    @ViewChild('popover') popover: ElementRef;
+    constructor() { }
     change() {
-        let top = this.element.nativeElement.offsetTop;
-        let left = this.element.nativeElement.offsetLeft;
-        console.log(this.element.nativeElement.style.height);
-        this.top = top + 50;
-        this.left = left - 120;
-        this.state = !this.state;
+        if (!this.enabled) {
+            let top = this.btn.nativeElement.offsetTop;
+            let left = this.btn.nativeElement.offsetLeft;
+            this.top = top + this.btn.nativeElement.offsetHeight + 10;
+            this.left = (left + this.btn.nativeElement.offsetWidth / 2) - (this.popover.nativeElement.offsetWidth / 2);
+            this.state = !this.state;
+            setTimeout(() => this.enabled = true, 100);
+        }
+    }
+    close() {
+        if (this.enabled) {
+            this.state = false;
+            this.enabled = false;
+            return;
+        } else {
+            return;
+        }
     }
     ngOnInit() { }
 }

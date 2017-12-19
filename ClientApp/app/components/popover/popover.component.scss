@@ -8,4 +8,7 @@
         margin: 0 auto;
         transform: translateX(50%);
     }
+    .arrow::after {
+        border-bottom-color : #f7f7f7;
+    }
 }

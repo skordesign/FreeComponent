@@ -17,6 +17,8 @@ const treeShakableModules = [
 const nonTreeShakableModules = [
     'bootstrap',
     'bootstrap/dist/css/bootstrap.min.css',
+    "bootstrap/dist/js/bootstrap.min.js",
+    "bootstrap/dist/js/bootstrap.bundle.min.js",
     'es6-promise',
     'es6-shim',
     'event-source-polyfill',

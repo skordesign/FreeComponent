@@ -22,13 +22,14 @@ import { AutoCompleteInputComponent } from '@app/components/autoCompleteInput/au
 import { ExpansibleCardComponent } from '@app/components/expansible-card/expansible-card.component';
 import { PopoverComponent } from '@app/components/popover/popover.component';
 import { CheckboxComponent } from '@app/components/checkbox/checkbox.component';
+import { OverlayPopupComponent } from '@app/components/overlay-popup/overlay-popup.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
         ConfirmDialogComponent, ProgressComponent, DropdownComponent, DropdownItemComponent, ExpansibleCardComponent,
-        ClickOutsideDirective, TabbedComponent, TabComponent, LoadingComponent, AutoCompleteInputComponent,
+        ClickOutsideDirective, TabbedComponent, TabComponent, LoadingComponent, AutoCompleteInputComponent,OverlayPopupComponent,
         PopoverComponent, CheckboxComponent,
         RatingBarComponent
     ],

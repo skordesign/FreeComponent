@@ -1,9 +1,21 @@
-<div class="btn-group">
-    <button class="btn btn-secondary btn-sm dropdown-toggle" (clickOutside)="isActivated=false" (click)="isActivated=!isActivated"
-        type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {{ placeholder }}
-    </button>
-    <div class="dropdown-menu" [class.show]="isActivated">
-        <ng-content></ng-content>
+<button class="btn btn-secondary"  (click)="isActivated=!isActivated" type="button">
+    {{ selectedItem?.text || placeholder }}
+    <span>
+        <i class="fa fa-sort"></i>
+    </span>
+</button>
+<app-overlay-popup *ngIf="isActivated">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>{{ header }}</h3>
+            </div>
+            <div class="modal-body">
+                <ng-content></ng-content>
+            </div>
+            <div class="modal-footer">
+                <button  type="button" class="btn btn-primary" (click)="isActivated=!isActivated">Close it</button>
+            </div>
+        </div>
     </div>
-</div>
+</app-overlay-popup>

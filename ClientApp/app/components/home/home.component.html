@@ -2,8 +2,8 @@
 <button class="btn btn-primary" (click)="showDialog()">Show confirm Dialog</button>
 <button class="btn btn-danger" (click)="setProgress()">Progress </button>
 <button class="btn btn-warning" (click)="showLoading()">Loading </button>
-<app-dropdown placeholder="Select some shit">
-  <app-dropdownItem *ngFor="let item of items" [value]="item" [text]="item.text" [isSelected]="item.text=='Hello'">
+<app-dropdown placeholder="Select some shit" header="Select action">
+  <app-dropdownItem *ngFor="let item of items" [value]="item" [text]="item.text">
     {{ item.text }}
   </app-dropdownItem>
 </app-dropdown>
@@ -86,7 +86,7 @@
   </app-tabbed>
 </app-expansible-card>
 <app-checkbox [isCheck]="1==1" text="what"></app-checkbox>
-<app-popover class="fixed-top" style="right:200px;left:auto;">
+<app-popover class="fixed-top" style="right:400px;left:auto;">
   <form>
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
@@ -103,3 +103,37 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </app-popover>
+<app-popover class="fixed-top" style="right:1px;left:auto;">
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+      <div class="form-check">
+          <app-checkbox style="font-size:2em" isCheck='false' text="Check me"></app-checkbox>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </app-popover>
+  <app-popover class="fixed-top" style="left:1px;right:auto">
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-check">
+            <app-checkbox style="font-size:2em" isCheck='false' text="Check me"></app-checkbox>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </app-popover>

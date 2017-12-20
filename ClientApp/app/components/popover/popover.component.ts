@@ -47,7 +47,6 @@ export class PopoverComponent implements OnInit {
             let popoverWidth = this.popover.nativeElement.offsetWidth;
             this.renderer.setElementStyle(this.popover.nativeElement, 'top', parenTop + parentHeight + 10 + 'px');
             this.renderer.setElementStyle(this.popover.nativeElement, 'left', -popoverWidth / 2 + parentWidth / 2 + 'px');
-            console.log(parentLeft); console.log(parentRight);
             let sizeOutRight = parentLeft + parentWidth / 2 + popoverWidth / 2 - window.innerWidth;
             let sizeOutLeft = parentRight + parentWidth / 2 + popoverWidth / 2 - window.innerWidth;
             if (sizeOutLeft > 0) {

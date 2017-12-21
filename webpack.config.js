@@ -4,6 +4,8 @@ const merge = require('webpack-merge');
 const AotPlugin = require('@ngtools/webpack').AotPlugin;
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 const TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlugin;
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const extractCss = new ExtractTextPlugin('stylesheets/[name]-one.css');
 module.exports = (env) => {
     // Configuration in common to both client-side and server-side bundles
     const isDevBuild = !(env && env.prod);
@@ -26,20 +28,23 @@ module.exports = (env) => {
                 { test: /\.html$/, use: 'html-loader?minimize=false' },
                 { test: /\.css$/, use: ['to-string-loader', isDevBuild ? 'css-loader' : 'css-loader?minimize'] },
                 { test: /\.(png|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' },
+                // {
+                //     test: /\.scss$/,
+                //     exclude: '/node_modules/',
+                //     use: extractCss.extract({
+                //         fallback: 'style-loader',
+                //         use:['to-string-loader','css-loader','sass-loader?sourceMap']
+                //     }) 
+                // },
                 {
                     test: /\.scss$/,
                     exclude: '/node_modules/',
-                    use: [
-                        {
-                            loader: "raw-loader"
-                        }, {
-                            loader: "sass-loader"
-                        }
-                    ]
-                }, { test: /\.(png|woff|woff2|eot|ttf|svg|gif)(\?|$)/, use: 'url-loader?limit=100000' }
+                    use: ['raw-loader', 'sass-loader?sourceMap']
+                },
+                { test: /\.(png|woff|woff2|eot|ttf|svg|gif)(\?|$)/, use: 'url-loader?limit=100000' }
             ]
         },
-        plugins: [new CheckerPlugin()]
+        plugins: [new CheckerPlugin(), extractCss]
     };
 
     // Configuration for client-side bundle suitable for running in browsers

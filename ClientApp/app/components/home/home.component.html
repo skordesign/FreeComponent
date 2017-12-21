@@ -44,50 +44,53 @@
         <a href="#" class="btn btn-primary">Go somewhere 2</a>
       </div>
       <app-expansible-card>
-          <app-tabbed>
-            <app-tab title="Hello">
-              <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </app-tab>
-            <app-tab title="Goodbye" isActivated="true">
-              <div class="card-body">
-                <h4 class="card-title">Card title 2</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere 2</a>
-              </div>
-              <div class="card-body">
-                <h4 class="card-title">Card title 2</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere 2</a>
-              </div>
-              <div class="card-body">
-                <h4 class="card-title">Card title 2</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere 2</a>
-              </div>
-              <div class="card-body">
-                <h4 class="card-title">Card title 2</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere 2</a>
-              </div>
-              <div class="card-body">
-                <h4 class="card-title">Card title 2</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere 2</a>
-              </div>
-              
-            </app-tab>
-          </app-tabbed>
-        </app-expansible-card>
+        <app-tabbed>
+          <app-tab title="Hello">
+            <div class="card-body">
+              <h4 class="card-title">Card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </app-tab>
+          <app-tab title="Goodbye" isActivated="true">
+            <div class="card-body">
+              <h4 class="card-title">Card title 2</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere 2</a>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Card title 2</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere 2</a>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Card title 2</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere 2</a>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Card title 2</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere 2</a>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Card title 2</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere 2</a>
+            </div>
+
+          </app-tab>
+        </app-tabbed>
+      </app-expansible-card>
     </app-tab>
   </app-tabbed>
 </app-expansible-card>
+<button class="btn btn-primary" rippleEffect>Holy shit</button>
 <app-checkbox [isCheck]="1==1" text="what"></app-checkbox>
-<app-popover class="fixed-top" style="right:400px;left:auto;">
-  <form>
+<app-popover class="fixed-top" style="right:24px;left:auto">
+  <span style="font-size: 2em;" button>
+    <i class="fa fa-star"></i></span>
+  <form popover>
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -98,42 +101,13 @@
       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
     </div>
     <div class="form-check">
-        <app-checkbox style="font-size:2em" isCheck='false' text="Check me"></app-checkbox>
+      <app-checkbox style="font-size:2em" isCheck='false' text="Check me"></app-checkbox>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </app-popover>
-<app-popover class="fixed-top" style="right:1px;left:auto;">
-    <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      </div>
-      <div class="form-check">
-          <app-checkbox style="font-size:2em" isCheck='false' text="Check me"></app-checkbox>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </app-popover>
-  <app-popover class="fixed-top" style="left:1px;right:auto">
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-check">
-            <app-checkbox style="font-size:2em" isCheck='false' text="Check me"></app-checkbox>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </app-popover>
+
+<div style="padding:16px;" [myDraggable]="{data: 'Draggable A'}" rippleEffect class="draggable">Draggable A</div>
+<div [myDraggable]="{data: 'Draggable B'}" class="draggable">Draggable B</div>
+<div myDropTarget (myDrop)="onDrop($event)" class="drop-target">Accepts Draggable A or B</div>
+<div [myDropTarget]="{zone:'another'}" class="drop-target">Can't drop here</div>

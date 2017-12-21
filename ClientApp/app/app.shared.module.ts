@@ -23,6 +23,10 @@ import { ExpansibleCardComponent } from '@app/components/expansible-card/expansi
 import { PopoverComponent } from '@app/components/popover/popover.component';
 import { CheckboxComponent } from '@app/components/checkbox/checkbox.component';
 import { OverlayPopupComponent } from '@app/components/overlay-popup/overlay-popup.component';
+import { DropTargetDirective } from '@app/directives/dropTarget.directive';
+import { DraggableDirective } from '@app/directives/dragable.directive';
+import { DragDropService } from '@app/services/dragdrop.service';
+import { RippleDirective } from '@app/directives/ripple.directive';
 
 @NgModule({
     declarations: [
@@ -30,8 +34,8 @@ import { OverlayPopupComponent } from '@app/components/overlay-popup/overlay-pop
         HomeComponent,
         ConfirmDialogComponent, ProgressComponent, DropdownComponent, DropdownItemComponent, ExpansibleCardComponent,
         ClickOutsideDirective, TabbedComponent, TabComponent, LoadingComponent, AutoCompleteInputComponent,OverlayPopupComponent,
-        PopoverComponent, CheckboxComponent,
-        RatingBarComponent
+        PopoverComponent, CheckboxComponent,DropTargetDirective, DraggableDirective,
+        RatingBarComponent,RippleDirective
     ],
     imports: [
         CommonModule,
@@ -43,7 +47,7 @@ import { OverlayPopupComponent } from '@app/components/overlay-popup/overlay-pop
             { path: '**', redirectTo: 'home' }
         ])
     ],
-    providers:[ConfirmService, ProgressService, LoadingService],
+    providers:[ConfirmService, ProgressService, LoadingService, DragDropService],
     schemas:[NO_ERRORS_SCHEMA]
 })
 export class AppModuleShared {

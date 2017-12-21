@@ -7,7 +7,7 @@ import { LoadingService } from '../../services/loading.service';
 @Component({
     selector: 'home',
     templateUrl: './home.component.html',
-    styles:[`
+    styles: [`
    
     `]
 })
@@ -25,6 +25,9 @@ export class HomeComponent {
                 console.log("Done")
             }
         }]);
+    }
+    onDrop(data: any) {
+        alert(`dropped: ${data}`);
     }
     public writeMessage = (msg: string) => { this.what = msg; };
     p = 0;
@@ -49,9 +52,9 @@ export class HomeComponent {
     }
     navigate(item: any) {
         console.log(item)
-        if(item.text=="Hello"){
+        if (item.text == "Hello") {
             console.log(item.text)
-        }else{
+        } else {
             alert(item.text);
         }
     }

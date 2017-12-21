@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef, ViewChild, Renderer } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild, Renderer,Renderer2 } from '@angular/core';
 import { trigger, state, style, transition, animate, group } from '@angular/animations';
 @Component({
     selector: 'app-popover',
@@ -8,34 +8,22 @@ import { trigger, state, style, transition, animate, group } from '@angular/anim
             state('0', style({
                 height: '0',
                 opacity: 0,
-                'z-index': -999999
-                //'display': 'none'
             })),
             state('1', style({
                 height: 'auto',
                 opacity: 1,
-                //'display': 'block'
-                'z-index': 1
-            })),
-            transition('1 => 0', [
-                style({ height: '*' }),
-                animate(100, style({ height: 0 }))
-            ]), transition('0 => 1', [
-                style({ height: 0 }),
-                animate(100, style({ height: '*' }))
-            ]),
+            }))
         ])
     ]
 })
 
 export class PopoverComponent implements OnInit {
-    @Input() header = "menu"
     state = false;
     enabled = false;
     @ViewChild('btn') btn: ElementRef;
     @ViewChild('popover') popover: ElementRef;
     @ViewChild('arrow') arrow: ElementRef;
-    constructor(private renderer: Renderer, private element: ElementRef) { }
+    constructor(private renderer: Renderer, private element: ElementRef, private renderer2:Renderer2) { }
     change() {
         if (!this.enabled) {
             let parenTop = this.element.nativeElement.offsetTop;
@@ -45,21 +33,24 @@ export class PopoverComponent implements OnInit {
             let parentRight = this.element.nativeElement.offsetRight || window.innerWidth - this.element.nativeElement.offsetLeft - this.element.nativeElement.offsetWidth;
 
             let popoverWidth = this.popover.nativeElement.offsetWidth;
-            this.renderer.setElementStyle(this.popover.nativeElement, 'top', parenTop + parentHeight + 10 + 'px');
+            this.renderer.setElementStyle(this.popover.nativeElement, 'top', parenTop + parentHeight  + 'px');
             this.renderer.setElementStyle(this.popover.nativeElement, 'left', -popoverWidth / 2 + parentWidth / 2 + 'px');
             let sizeOutRight = parentLeft + parentWidth / 2 + popoverWidth / 2 - window.innerWidth;
             let sizeOutLeft = parentRight + parentWidth / 2 + popoverWidth / 2 - window.innerWidth;
             if (sizeOutLeft > 0) {
-                let valToTransform = sizeOutLeft + 10;
+                let valToTransform = sizeOutLeft + 8;
                 this.renderer.setElementStyle(this.popover.nativeElement, 'transform', 'translateX(' + valToTransform + 'px)');
                 this.renderer.setElementStyle(this.arrow.nativeElement, 'transform', 'translateX(' + -valToTransform + 'px)');
             } else if (sizeOutRight > 0) {
-                let valToTransform = sizeOutRight + 10;
+                let valToTransform = sizeOutRight + 8;
                 this.renderer.setElementStyle(this.arrow.nativeElement, 'transform', 'translateX(' + valToTransform + 'px)');
                 this.renderer.setElementStyle(this.popover.nativeElement, 'transform', 'translateX(' + -valToTransform + 'px)');
             }
-
-            this.state = !this.state;
+            if (parentLeft < (32 - parentWidth / 2) || parentRight < (32 - parentWidth / 2))
+            {
+                this.renderer2.removeChild(this.element.nativeElement, this.arrow.nativeElement);
+            }
+                this.state = !this.state;
             setTimeout(() => this.enabled = true, 100);
         }
     }

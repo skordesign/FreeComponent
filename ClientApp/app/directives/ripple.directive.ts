@@ -28,10 +28,9 @@ export class RippleDirective {
         this.renderer.setElementStyle(ripple, 'top', (y - 10).toString() + 'px');
         this.renderer.setElementStyle(ripple, 'opacity', '0.5');
         let scaleNumber = this.el.nativeElement.offsetWidth / 40;
-        this.renderer.setElementStyle(ripple, 'transition', 'all 1s ease-out');
+        this.renderer.setElementStyle(ripple, 'transition', 'all .8s ease-out');
         this.renderer.setElementStyle(ripple, 'opacity', '0');
         this.renderer.setElementStyle(ripple, 'transform', 'scale(' + scaleNumber * 2 + ')');
-
-        setTimeout(() => this.renderer2.removeChild(this.el.nativeElement, ripple), 1000);
+        setTimeout(() => this.renderer2.removeChild(this.el.nativeElement, ripple), 800);
     }
 }

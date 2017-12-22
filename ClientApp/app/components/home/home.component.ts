@@ -29,6 +29,9 @@ export class HomeComponent {
     onDrop(data: any) {
         alert(`dropped: ${data}`);
     }
+    onExpand(){
+        console.log('fuck');
+    }
     public writeMessage = (msg: string) => { this.what = msg; };
     p = 0;
     public setProgress = () => this.progressSvc.setPercent(this.p = this.p + 10);

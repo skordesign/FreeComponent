@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild, Renderer2 } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, Renderer2, Input } from '@angular/core';
 import { trigger, state, style, transition, animate, group } from '@angular/animations';
 @Component({
     selector: 'app-expansible-card',
@@ -10,7 +10,7 @@ import { trigger, state, style, transition, animate, group } from '@angular/anim
                 height: '200px'
             })),
             state('1', style({
-                height: 'auto', 
+                height: 'auto',
             })),
             transition('1 => 0', [
                 style({ height: '*' }),
@@ -25,6 +25,13 @@ import { trigger, state, style, transition, animate, group } from '@angular/anim
 
 export class ExpansibleCardComponent implements OnInit {
     isExpanded = false;
+    @Input() onExpand: any;
     constructor() { }
     ngOnInit() { }
+    change() {
+        this.isExpanded = !this.isExpanded;
+        if (this.onExpand) {
+            this.onExpand();
+        }
+    }
 }

@@ -44,7 +44,7 @@ import { RippleDirective } from '@app/directives/ripple.directive';
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
-            { path: '**', redirectTo: 'home' }
+            { path: '**', redirectTo: 'home/error' }
         ])
     ],
     providers:[ConfirmService, ProgressService, LoadingService, DragDropService],

@@ -5,6 +5,12 @@
 <app asp-prerender-module="ClientApp/dist/main-server">Loading...</app>
 
 <script src="~/dist/vendor.js" asp-append-version="true"></script>
+@section css {
+    <link rel="stylesheet" href="~/dist/stylesheets/main-client-one.css"/>
+    <link ref="stylesheet" href="~/dist/style.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
+}
 @section scripts {
     <script src="~/dist/main-client.js" asp-append-version="true"></script>
 }

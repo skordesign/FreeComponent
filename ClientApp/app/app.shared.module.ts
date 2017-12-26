@@ -30,6 +30,7 @@ import { RippleDirective } from '@app/directives/ripple.directive';
 import { TwoSideCardComponent } from '@app/components/2side-card/2side-card.component';
 import { ActionMenuComponent } from '@app/components/action-menu/action-menu.component';
 import { ActionItemComponent } from '@app/components/action-menu/action-item/action-item.component';
+import { CarouselListComponent } from '@app/components/carousel-list/carousel-list.component';
 
 @NgModule({
     declarations: [
@@ -37,7 +38,7 @@ import { ActionItemComponent } from '@app/components/action-menu/action-item/act
         HomeComponent,
         ConfirmDialogComponent, ProgressComponent, DropdownComponent, DropdownItemComponent, ExpansibleCardComponent,
         ClickOutsideDirective, TabbedComponent, TabComponent, LoadingComponent, AutoCompleteInputComponent,OverlayPopupComponent,
-        PopoverComponent, CheckboxComponent,DropTargetDirective, DraggableDirective,
+        PopoverComponent, CheckboxComponent,DropTargetDirective, DraggableDirective, CarouselListComponent,
         RatingBarComponent,RippleDirective, TwoSideCardComponent, ActionMenuComponent, ActionItemComponent
     ],
     imports: [

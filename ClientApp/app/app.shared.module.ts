@@ -28,6 +28,8 @@ import { DraggableDirective } from '@app/directives/dragable.directive';
 import { DragDropService } from '@app/services/dragdrop.service';
 import { RippleDirective } from '@app/directives/ripple.directive';
 import { TwoSideCardComponent } from '@app/components/2side-card/2side-card.component';
+import { ActionMenuComponent } from '@app/components/action-menu/action-menu.component';
+import { ActionItemComponent } from '@app/components/action-menu/action-item/action-item.component';
 
 @NgModule({
     declarations: [
@@ -36,7 +38,7 @@ import { TwoSideCardComponent } from '@app/components/2side-card/2side-card.comp
         ConfirmDialogComponent, ProgressComponent, DropdownComponent, DropdownItemComponent, ExpansibleCardComponent,
         ClickOutsideDirective, TabbedComponent, TabComponent, LoadingComponent, AutoCompleteInputComponent,OverlayPopupComponent,
         PopoverComponent, CheckboxComponent,DropTargetDirective, DraggableDirective,
-        RatingBarComponent,RippleDirective, TwoSideCardComponent
+        RatingBarComponent,RippleDirective, TwoSideCardComponent, ActionMenuComponent, ActionItemComponent
     ],
     imports: [
         CommonModule,

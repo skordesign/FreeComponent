@@ -4,6 +4,7 @@ import { ConfirmationService } from 'primeng/components/common/confirmationservi
 import { ProgressService } from '../../services/progress.service';
 import { DropdownItemComponent } from '../dropdown/dropdownItem/dropdownItem.component';
 import { LoadingService } from '../../services/loading.service';
+import { MenuItem } from '@app/components/action-menu/action-menu.component';
 @Component({
     selector: 'home',
     templateUrl: './home.component.html',
@@ -13,6 +14,14 @@ import { LoadingService } from '../../services/loading.service';
 })
 export class HomeComponent {
     what = "Hello";
+    actionItems: MenuItem[] = [{
+        iconClass: "fa fa-star",
+        text: "Upload",
+    }, {
+        iconClass: "fa fa-star-o",
+        text: "Download",
+        action:()=>this.loadingSvc.showLoading(true)
+    }]
     constructor(private _confirm: ConfirmService, private progressSvc: ProgressService, private loadingSvc: LoadingService) { }
     public showDialog() {
         this._confirm.showConfirm("Test", "Some thing changed", [{
@@ -29,7 +38,7 @@ export class HomeComponent {
     onDrop(data: any) {
         alert(`dropped: ${data}`);
     }
-    onExpand(){
+    onExpand() {
         console.log('fuck');
     }
     public writeMessage = (msg: string) => { this.what = msg; };

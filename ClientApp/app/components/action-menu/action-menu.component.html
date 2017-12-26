@@ -1,0 +1,6 @@
+<div class="d-flex justify-content-center hures-menu">
+    <ng-container *ngFor="let item of items; let i=index">
+        <app-action-item [item]="item"></app-action-item>
+        <p *ngIf="i<items.length-1" class="hures-menu-item-line" >|</p>
+    </ng-container>
+</div>

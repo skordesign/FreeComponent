@@ -47,6 +47,7 @@ import { ActionItemComponent } from '@app/components/action-menu/action-item/act
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
+            { path: 'admin', component: HomeComponent },
             { path: '**', redirectTo: 'home/error' }
         ])
     ],

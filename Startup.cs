@@ -49,9 +49,16 @@ namespace FreeComponent
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
 
+                routes.MapRoute(
+                    name: "default-admin",
+                    template: "{controller=Admin}/{action=Index}/{id?}");
+
                 routes.MapSpaFallbackRoute(
                     name: "spa-fallback",
                     defaults: new { controller = "Home", action = "Index" });
+                routes.MapSpaFallbackRoute(
+                    name: "spa-fallback-admin",
+                    defaults: new { controller = "Admin", action = "Index" });
             });
         }
     }

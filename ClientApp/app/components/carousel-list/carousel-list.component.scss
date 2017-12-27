@@ -2,11 +2,13 @@
     height: 136px;
     width: 100%;
     overflow: hidden;
+    transition: all 0.5s ease-in;
     .slides {
         list-style: none;
         position: relative;
         overflow: hidden;
         height: 136px;
+        perspective: 100px;
         transition: all 0.5s ease-in;
         -moz-transition: all 0.5s ease-in;
         -webkit-transition: all 0.5s ease-in;
@@ -15,6 +17,7 @@
             display: block;
             margin: 8px 32px;
             float: left;
+            transition: all 0.5s ease-out;
             img {
                 height: 100%;
                 max-width: 120px;

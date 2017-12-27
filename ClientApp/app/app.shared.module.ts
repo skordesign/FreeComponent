@@ -31,6 +31,7 @@ import { TwoSideCardComponent } from '@app/components/2side-card/2side-card.comp
 import { ActionMenuComponent } from '@app/components/action-menu/action-menu.component';
 import { ActionItemComponent } from '@app/components/action-menu/action-item/action-item.component';
 import { CarouselListComponent } from '@app/components/carousel-list/carousel-list.component';
+import { GraphModule } from '@app/graph/graph.module';
 
 @NgModule({
     declarations: [
@@ -42,6 +43,7 @@ import { CarouselListComponent } from '@app/components/carousel-list/carousel-li
         RatingBarComponent,RippleDirective, TwoSideCardComponent, ActionMenuComponent, ActionItemComponent
     ],
     imports: [
+        GraphModule,
         CommonModule,
         HttpModule,
         FormsModule,

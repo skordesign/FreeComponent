@@ -1,0 +1,13 @@
+<div class="graph-col-container">
+    <div class="graph-col" [style.height.px]="layoutDefault.height">
+        <ng-container  *ngFor="let item of graph.data">
+            <div class="graph-col-item" [@colChanged]>
+                <div [style.height.%]="percent(item.value)" [style.width.px]="layoutDefault.colWidth"
+                 [style.background]="item.color||layoutDefault.color" class="graph-data-show"></div>
+                 <p class="graph-col-title" style="width:100%">{{ item.value }}</p>
+                <strong class="graph-col-title" style="width:100%">{{ item.label }}</strong>
+            </div>
+        </ng-container>
+    </div>
+    <h3 class="graph-col-title">{{ graph?.title }}</h3>
+</div>

@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, AfterViewChecked } from '@angular/core';
 import { ConfirmService } from '../../services/confirm.service';
 import { ConfirmationService } from 'primeng/components/common/confirmationservice';
 import { ProgressService } from '../../services/progress.service';
 import { DropdownItemComponent } from '../dropdown/dropdownItem/dropdownItem.component';
 import { LoadingService } from '../../services/loading.service';
 import { MenuItem } from '@app/components/action-menu/action-menu.component';
+import { TdTextEditorComponent } from '@covalent/text-editor';
 @Component({
     selector: 'home',
     templateUrl: './home.component.html',
@@ -12,7 +13,14 @@ import { MenuItem } from '@app/components/action-menu/action-menu.component';
    
     `]
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewChecked {
+    ngAfterViewChecked(): void {
+        this.editor = true;
+    }
+    editor: boolean = false;
+    ngAfterViewInit(): void {
+        
+    }
     what = "Hello";
     actionItems: MenuItem[] = [{
         iconClass: "fa fa-star",
@@ -23,9 +31,11 @@ export class HomeComponent {
         action: () => this.loadingSvc.showLoading(true)
     }]
     constructor(private _confirm: ConfirmService, private progressSvc: ProgressService, private loadingSvc: LoadingService) { }
-
-
-
+    values = ""
+    options: any = {
+        lineWrapping: true,
+        toolbar: false
+    };
     carouselItems: any[] = [
         {
             img: "https://pbs.twimg.com/profile_images/875416480547917824/R6wl9gWl.jpg",

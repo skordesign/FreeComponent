@@ -32,7 +32,9 @@ import { ActionMenuComponent } from '@app/components/action-menu/action-menu.com
 import { ActionItemComponent } from '@app/components/action-menu/action-item/action-item.component';
 import { CarouselListComponent } from '@app/components/carousel-list/carousel-list.component';
 import { GraphModule } from '@app/graph/graph.module';
-
+import { CKEditorModule } from 'ng2-ckeditor';
+import { Sample } from '@app/components/ckeditor/sample.component';
+import { CovalentTextEditorModule } from '@covalent/text-editor';
 @NgModule({
     declarations: [
         AppComponent,
@@ -40,13 +42,13 @@ import { GraphModule } from '@app/graph/graph.module';
         ConfirmDialogComponent, ProgressComponent, DropdownComponent, DropdownItemComponent, ExpansibleCardComponent,
         ClickOutsideDirective, TabbedComponent, TabComponent, LoadingComponent, AutoCompleteInputComponent,OverlayPopupComponent,
         PopoverComponent, CheckboxComponent,DropTargetDirective, DraggableDirective, CarouselListComponent,
-        RatingBarComponent,RippleDirective, TwoSideCardComponent, ActionMenuComponent, ActionItemComponent
+        RatingBarComponent,RippleDirective, TwoSideCardComponent, ActionMenuComponent, ActionItemComponent, Sample,
     ],
     imports: [
         GraphModule,
         CommonModule,
         HttpModule,
-        FormsModule,
+        FormsModule,CKEditorModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },

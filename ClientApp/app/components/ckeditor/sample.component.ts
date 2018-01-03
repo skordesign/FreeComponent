@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewChecked, AfterViewInit } from '@angular/core';
 
 @Component({
     selector: 'sample',
@@ -22,7 +22,7 @@ import { Component } from '@angular/core';
   </ckeditor>
   `
 })
-export class Sample {
+export class Sample  {
     ckeditorContent: string;
     constructor() {
         this.ckeditorContent = `<p>My HTML</p>`;

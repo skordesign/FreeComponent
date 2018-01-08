@@ -35,13 +35,14 @@ import { GraphModule } from '@app/graph/graph.module';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { Sample } from '@app/components/ckeditor/sample.component';
 import { CovalentTextEditorModule } from '@covalent/text-editor';
+import { SwitchComponent } from '@app/components/switch/switch.component';
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
         ConfirmDialogComponent, ProgressComponent, DropdownComponent, DropdownItemComponent, ExpansibleCardComponent,
         ClickOutsideDirective, TabbedComponent, TabComponent, LoadingComponent, AutoCompleteInputComponent,OverlayPopupComponent,
-        PopoverComponent, CheckboxComponent,DropTargetDirective, DraggableDirective, CarouselListComponent,
+        PopoverComponent, CheckboxComponent,DropTargetDirective, DraggableDirective, CarouselListComponent, SwitchComponent,
         RatingBarComponent,RippleDirective, TwoSideCardComponent, ActionMenuComponent, ActionItemComponent, Sample,
     ],
     imports: [

@@ -7,6 +7,7 @@ import { LoadingService } from '../../services/loading.service';
 import { MenuItem } from '@app/components/action-menu/action-menu.component';
 import { TdTextEditorComponent } from '@covalent/text-editor';
 import { isPlatformBrowser } from '@angular/common';
+import { Http } from '@angular/http';
 @Component({
     selector: 'home',
     templateUrl: './home.component.html',
@@ -16,11 +17,15 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class HomeComponent {
     editor: boolean = false;
-    constructor( @Inject(PLATFORM_ID) platformId: string) {
+    constructor( @Inject(PLATFORM_ID) platformId: string, private http:Http) {
         if (isPlatformBrowser(platformId)) {
             this.editor = true
         }
+        this.getData();
     }
-
+    getData(){
+      
+        
+    }
 }
 
